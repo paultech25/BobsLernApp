@@ -1025,6 +1025,155 @@
             transform: translateX(2px);
         }
 
+        /* PROFILE VIEW (New) */
+        #view-profile {
+            animation: fadeIn 0.3s;
+        }
+
+        /* Avatar Picker */
+        .avatar-opt {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .avatar-opt:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        .avatar-opt.selected {
+            background: var(--primary-dim);
+            border: 2px solid var(--primary);
+        }
+
+        .profile-avatar-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .avatar-edit-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .profile-level-badge {
+            background: var(--bg-app);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .settings-menu {
+            margin-bottom: 40px;
+        }
+
+        .settings-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+        }
+
+        .settings-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .settings-item:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .settings-item.danger {
+            color: var(--error);
+        }
+
         /* HUB VIEW (Startbildschirm für ein Thema) */
         .hub-container {
             text-align: center;
@@ -1486,6 +1635,157 @@
                 /* Smaller font */
             }
         }
+
+        /* --- PROFILE VIEW (New Premium) --- */
+        .profile-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(99, 102, 241, 0.1) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .profile-avatar-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px auto;
+        }
+
+        .profile-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px var(--primary-glow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .avatar-edit-btn {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.2s;
+        }
+
+        .avatar-edit-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary);
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .profile-level-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .settings-menu {
+            padding: 0 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .settings-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .settings-item:first-child {
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        .settings-item:last-child {
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            border-bottom: none;
+        }
+
+        .settings-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .settings-item.danger {
+            color: var(--error);
+        }
     </style>
 </head>
 
@@ -1895,6 +2195,100 @@
         </button>
     </nav>
 
+    /* --- PROFILE HUB --- */
+    <div id="view-profile" class="hidden"
+        style="position: fixed; top:0; left:0; width:100%; height:100%; background: var(--bg-app); z-index: 200; overflow-y: auto; padding-bottom: 80px;">
+
+        <div
+            style="padding: 20px; display:flex; justify-content:space-between; align-items:center; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px); position:sticky; top:0; z-index:10;">
+            <h2 style="margin:0; font-size: 24px;">Mein Profil</h2>
+            <button onclick="closeProfile()"
+                style="background:none; border:none; color:var(--text-muted); font-size: 24px; cursor:pointer;">✕</button>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="position: relative; display: inline-block;">
+                    <div id="profile-avatar-display" onclick="toggleAvatarPicker()"
+                        style="width: 100px; height: 100px; background: var(--bg-card); border-radius: 50%; border: 2px solid var(--primary); display:flex; align-items:center; justify-content:center; font-size: 50px; cursor: pointer; box-shadow: 0 0 20px var(--primary-dim);">
+                        👤
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 0; right: 0; background: var(--primary); width: 30px; height: 30px; border-radius: 50%; display:flex; align-items:center; justify-content:center; border: 2px solid var(--bg-app); pointer-events:none;">
+                        ✎
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <input type="text" id="profile-username" value="Benutzer"
+                        style="background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); color: white; font-size: 24px; font-weight: bold; text-align: center; width: 80%; padding: 5px;"
+                        placeholder="Dein Name">
+                </div>
+                <div style="color: var(--text-muted); font-size: 14px; margin-top: 5px;" id="profile-email-display">
+                    user@example.com</div>
+            </div>
+
+            <div id="avatar-picker" class="hidden"
+                style="background: var(--bg-card); padding: 20px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1);">
+                <h3 style="margin-top:0;">Wähle deinen Charakter</h3>
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; font-size: 30px;">
+                    <div onclick="selectAvatar('🦁')" class="avatar-opt">🦁</div>
+                    <div onclick="selectAvatar('🐯')" class="avatar-opt">🐯</div>
+                    <div onclick="selectAvatar('🐻')" class="avatar-opt">🐻</div>
+                    <div onclick="selectAvatar('🦅')" class="avatar-opt">🦅</div>
+                    <div onclick="selectAvatar('🐺')" class="avatar-opt">🐺</div>
+                    <div onclick="selectAvatar('🦊')" class="avatar-opt">🦊</div>
+                    <div onclick="selectAvatar('🐼')" class="avatar-opt">🐼</div>
+                    <div onclick="selectAvatar('🐨')" class="avatar-opt">🐨</div>
+                    <div onclick="selectAvatar('🐸')" class="avatar-opt">🐸</div>
+                    <div onclick="selectAvatar('🐙')" class="avatar-opt">🐙</div>
+                    <div onclick="selectAvatar('👽')" class="avatar-opt">👽</div>
+                    <div onclick="selectAvatar('🤖')" class="avatar-opt">🤖</div>
+                    <div onclick="selectAvatar('⚡')" class="avatar-opt">⚡</div>
+                    <div onclick="selectAvatar('🧠')" class="avatar-opt">🧠</div>
+                    <div onclick="selectAvatar('👤')" class="avatar-opt">👤</div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <div class="settings-label">Zugangsdaten</div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; font-size:12px; color:var(--text-muted); margin-bottom:5px;">E-Mail
+                        Adresse</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="email" id="edit-email" placeholder="Neue E-Mail" class="auth-input"
+                            style="flex:1;">
+                        <button onclick="updateUserEmail()" class="p-btn btn-starter"
+                            style="width:auto; padding: 10px 20px;">Speichern</button>
+                    </div>
+                </div>
+
+                <div>
+                    <label style="display:block; font-size:12px; color:var(--text-muted); margin-bottom:5px;">Neues
+                        Passwort</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="password" id="edit-password" placeholder="******" class="auth-input"
+                            style="flex:1;">
+                        <button onclick="updateUserPassword()" class="p-btn btn-starter"
+                            style="width:auto; padding: 10px 20px;">Ändern</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section" style="border-color: rgba(244,63,94,0.3);">
+                <div class="settings-label" style="color: var(--error);">Gefahrenzone</div>
+                <button onclick="Auth.logout()" class="p-btn"
+                    style="background: rgba(255,255,255,0.05); margin-bottom: 10px;">Ausloggen</button>
+                <button onclick="deleteData()" class="p-btn"
+                    style="background: rgba(244, 63, 94, 0.1); color: var(--error);">Fortschritt zurücksetzen</button>
+            </div>
+
+            <div style="height: 50px;"></div>
+        </div>
+    </div>
+
     <!-- ABO MODAL -->
     <!-- ABO MODAL (Clean & High-End) -->
     <div id="modal-abo" class="modal hidden">
@@ -2252,12 +2646,96 @@
             }
         }
 
-        // --- AUTH UI LOGIC ---
+        // --- AUTH & PROFILE UI LOGIC ---
         function openSettings() {
-            // Instead of settings, we open generic profile/auth settings
-            // Check if logged in?
-            updateAuthUI();
-            document.getElementById('modal-auth').classList.remove('hidden');
+            if (Auth.isAuthenticated()) {
+                openProfile();
+            } else {
+                openAuthModal();
+            }
+        }
+
+        // --- PROFIL LOGIK ---
+
+        function openProfile() {
+            // 1. Daten laden
+            if (Auth.user) {
+                document.getElementById('profile-username').value = Auth.user.username;
+                document.getElementById('profile-email-display').innerText = Auth.user.email;
+                document.getElementById('profile-avatar-display').innerText = Auth.user.avatar || '👤';
+            } else {
+                // Gast Modus
+                document.getElementById('profile-username').value = "Gast";
+                document.getElementById('profile-email-display').innerText = "Nicht angemeldet";
+            }
+
+            // 2. View öffnen
+            document.getElementById('view-profile').classList.remove('hidden');
+            currentMode = 'profile'; // Keep track of mode
+        }
+
+        function closeProfile() {
+            // Username speichern beim Schließen? Oder lieber per Button? 
+            // Wir speichern den Username automatisch beim Schließen oder bei Änderung.
+            if (Auth.user) {
+                const newName = document.getElementById('profile-username').value;
+                if (newName !== Auth.user.username) {
+                    Auth.updateUsername(newName).then(() => {
+                        console.log("Name gespeichert:", newName);
+                    });
+                }
+            }
+            document.getElementById('view-profile').classList.add('hidden');
+
+            // Go back previous view if logic demands, or dashboard
+            // Simply hiding it overlays; assuming 'goHome' logic handled underlying view management? 
+            // The instructions said "Full Screen View", so maybe we should use switchView.
+            // But the HTML provided has style="position:fixed;...z-index:200" which acts like an overlay.
+            // So simply hiding it reveals what was behind.
+        }
+
+        // Avatar Logik
+        function toggleAvatarPicker() {
+            const picker = document.getElementById('avatar-picker');
+            picker.classList.toggle('hidden');
+        }
+
+        function selectAvatar(icon) {
+            document.getElementById('profile-avatar-display').innerText = icon;
+            toggleAvatarPicker();
+
+            // Speichern in Firebase
+            if (Auth.user) {
+                Auth.updateAvatar(icon);
+            }
+        }
+
+        async function updateUserEmail() {
+            const email = document.getElementById('edit-email').value;
+            // USER REQUESTED VALIDATION
+            if (!email) return alert("Bitte E-Mail eingeben");
+
+            try {
+                await Auth.updateUserEmail(email);
+                document.getElementById('edit-email').value = ''; // Reset Feld
+                document.getElementById('profile-email-display').innerText = email;
+            } catch (e) {
+                // Error is alerted in Auth object usually, but safe to catch
+                console.error(e);
+            }
+        }
+
+        async function updateUserPassword() {
+            const pw = document.getElementById('edit-password').value;
+            // USER REQUESTED VALIDATION
+            if (!pw) return alert("Bitte Passwort eingeben");
+
+            try {
+                await Auth.updateUserPassword(pw);
+                document.getElementById('edit-password').value = ''; // Reset Feld
+            } catch (e) {
+                console.error(e);
+            }
         }
 
         function closeAuthModal() {
@@ -2265,44 +2743,39 @@
         }
 
         function updateAuthUI() {
-            try {
-                console.log("updateAuthUI called. Authenticated:", Auth.isAuthenticated(), "User:", Auth.user);
+            // This global listener might be called by auth.js
+            // If in profile mode and logged out -> go home
+            if (!Auth.isAuthenticated() && currentMode === 'profile') {
+                goHome();
+                return;
+            }
 
-                if (Auth.isAuthenticated()) {
-                    document.getElementById('auth-logged-in').classList.remove('hidden');
-                    document.getElementById('auth-logged-out').classList.add('hidden');
+            // Update Auth Modal UI State (Login vs Profile) - if modal is open
+            if (Auth.isAuthenticated()) {
+                // If logged in, we typically show profile, but if modal is open via some other means:
+                document.getElementById('auth-logged-in').classList.remove('hidden');
+                document.getElementById('auth-logged-out').classList.add('hidden');
 
-                    const email = (Auth.user && Auth.user.email) ? Auth.user.email : 'Benutzer';
-                    const username = (Auth.user && Auth.user.username) ? Auth.user.username : email.split('@')[0];
-                    const level = (Auth.user && Auth.user.level) ? Auth.user.level : 'Azubi';
+                // Update Modal Content (Fallback if user opens modal directly)
+                const email = (Auth.user && Auth.user.email) ? Auth.user.email : 'Benutzer';
+                const username = (Auth.user && Auth.user.username) ? Auth.user.username : email.split('@')[0];
+                const level = (Auth.user && Auth.user.level) ? Auth.user.level : 'Azubi';
 
-                    const el = document.getElementById('auth-user-email');
-                    if (el) {
-                        el.innerHTML = `
-                            <div style="font-size:18px; font-weight:bold; margin-bottom:4px;">${username}</div>
-                            <div style="font-size:12px; color:var(--primary); font-weight:bold; margin-bottom:2px;">${level}</div>
-                            <div style="font-size:11px; opacity:0.6;">${email}</div>
-                        `;
-                    }
-                } else {
-                    document.getElementById('auth-logged-in').classList.add('hidden');
-                    document.getElementById('auth-logged-out').classList.remove('hidden');
-
-                    // Reset to Guest View
-                    const guestView = document.getElementById('auth-guest-view');
-                    const formContainer = document.getElementById('auth-form-container');
-                    if (guestView && formContainer) {
-                        guestView.classList.remove('hidden');
-                        formContainer.classList.add('hidden');
-                    }
+                const el = document.getElementById('auth-user-email');
+                if (el) {
+                    el.innerHTML = `
+                        <div style="font-size:18px; font-weight:bold; margin-bottom:4px;">${username}</div>
+                        <div style="font-size:12px; color:var(--primary); font-weight:bold; margin-bottom:2px;">${level}</div>
+                        <div style="font-size:11px; opacity:0.6;">${email}</div>
+                    `;
                 }
-            } catch (e) {
-                console.error("updateAuthUI Crash:", e);
+            } else {
                 document.getElementById('auth-logged-in').classList.add('hidden');
                 document.getElementById('auth-logged-out').classList.remove('hidden');
             }
         }
 
+        // --- AUTH MODAL INTERNALS ---
         function showLoginForm() {
             const guestView = document.getElementById('auth-guest-view');
             const formContainer = document.getElementById('auth-form-container');
@@ -2919,6 +3392,99 @@
         };
 
     </script>
+    <!-- AUTH MODAL -->
+    <div id="modal-auth" class="modal hidden"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; display: flex;">
+        <div class="modal-content"
+            style="background: #1e293b; padding: 40px; border-radius: 24px; width: 90%; max-width: 400px; text-align: center; position: relative; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            <button class="close-modal" onclick="closeAuthModal()"
+                style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 28px; color: #94a3b8; cursor: pointer; transition: color 0.2s;">×</button>
+            <style>
+                .close-modal:hover {
+                    color: #fff !important;
+                }
+            </style>
+
+            <!-- LOGGED OUT STATE -->
+            <div id="auth-logged-out">
+                <h2 id="auth-form-title" style="justify-content: center; margin-bottom: 24px; font-size: 24px;">
+                    Einloggen</h2>
+
+                <!-- Guest View (Initial Choice) -->
+                <div id="auth-guest-view">
+                    <p style="color: var(--text-muted); margin-bottom: 32px; line-height: 1.6; font-size: 15px;">
+                        Melde dich an, um deinen Fortschritt zu speichern und auf allen Geräten zu synchronisieren.
+                    </p>
+
+                    <button class="p-btn"
+                        style="background: #fff; color: #000; display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; font-weight: 600;"
+                        onclick="Auth.googleLogin()">
+                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                            style="width: 20px; height: 20px;">
+                        Mit Google anmelden
+                    </button>
+
+                    <button class="p-btn" onclick="showLoginForm()"
+                        style="background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); font-weight: 500;">
+                        Mit E-Mail fortfahren
+                    </button>
+
+                    <div style="font-size: 11px; opacity: 0.4; margin-top: 24px;">
+                        Durch die Anmeldung stimmst du unseren <a href="#" onclick="openLegal('agb'); return false;"
+                            style="color: #fff; text-decoration: underline;">AGB</a> und <a href="#"
+                            onclick="openLegal('datenschutz'); return false;"
+                            style="color: #fff; text-decoration: underline;">Datenschutzbestimmungen</a> zu.
+                    </div>
+                </div>
+
+                <!-- Form Container (Email/Password) -->
+                <div id="auth-form-container" class="hidden">
+                    <div id="auth-error"
+                        style="color: var(--error); background: rgba(244, 63, 94, 0.1); padding: 12px; border-radius: 8px; font-size: 13px; margin-bottom: 20px; display: none; text-align: left; border: 1px solid rgba(244, 63, 94, 0.2);">
+                    </div>
+
+                    <div class="auth-form">
+                        <input type="text" id="auth-username" class="auth-input hidden"
+                            placeholder="Dein Name (Optional)">
+                        <input type="email" id="auth-email" class="auth-input" placeholder="E-Mail Adresse">
+                        <input type="password" id="auth-password" class="auth-input" placeholder="Passwort">
+
+                        <button id="btn-login" class="p-btn btn-plus" onclick="handleLogin()"
+                            style="margin-top: 8px;">Einloggen</button>
+                        <button id="btn-signup" class="p-btn btn-plus hidden" onclick="handleSignup()"
+                            style="margin-top: 8px;">Registrieren</button>
+                    </div>
+
+                    <div class="auth-switch" onclick="toggleAuthMode()" style="margin-top: 20px; padding: 10px;">
+                        <span id="auth-switch-text">Neu hier? Jetzt registrieren</span>
+                    </div>
+                    <div class="auth-switch"
+                        style="margin-top: 0px; font-size: 13px; opacity: 0.6; text-decoration: none;"
+                        onclick="document.getElementById('auth-form-container').classList.add('hidden'); document.getElementById('auth-guest-view').classList.remove('hidden');">
+                        ← Zurück zur Auswahl
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOGGED IN STATE -->
+            <div id="auth-logged-in" class="hidden">
+                <div
+                    style="width: 86px; height: 86px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 10px auto 24px auto; display: flex; align-items: center; justify-content: center; font-size: 36px; box-shadow: 0 0 30px var(--primary-glow); border: 4px solid rgba(255,255,255,0.1);">
+                    👤</div>
+                <div id="auth-user-email" style="margin-bottom: 32px;"></div>
+
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <button class="p-btn btn-starter" onclick="deleteData()"
+                        style="padding: 14px; font-size: 14px; background: rgba(255,255,255,0.05);">Fortschritt
+                        löschen</button>
+                    <button class="p-btn btn-again" onclick="handleLogout()"
+                        style="padding: 14px; font-size: 14px;">Ausloggen</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- KaTeX JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
